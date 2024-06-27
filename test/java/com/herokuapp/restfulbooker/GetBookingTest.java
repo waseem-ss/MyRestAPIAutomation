@@ -52,7 +52,7 @@ public class GetBookingTest extends APIBaseState {
             response = RestAssured.given(requestSpec).get("booking/" + id);
             response.prettyPrint();
             Assert.assertEquals(response.getStatusCode(),200,"Request Failed");
-            Assert.assertEquals(response.xmlPath().getString("booking.firstname").toString(), "Mary",
+            Assert.assertEquals(response.xmlPath().getString("booking.firstname"), "Mary",
                     "First Name is incorrect");
         }
     }
@@ -69,7 +69,7 @@ public class GetBookingTest extends APIBaseState {
         log.info("Status Code " + response.getStatusCode());
         Assert.assertEquals(response.getStatusCode(), 200, "Get bookings is not successful for ID" + id);
         //converted to xml path
-        String fName = response.xmlPath().getString("booking.firstname").toString();//response.jsonPath().getString("firstname");
+        String fName = response.xmlPath().getString("booking.firstname");//response.jsonPath().getString("firstname");
         /*String lName = response.jsonPath().getString("lastname");
         Integer totalPrice = response.jsonPath().getInt("totalprice");
         Boolean depositPaid = response.jsonPath().getBoolean("depositpaid");
