@@ -1,0 +1,128 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Rest API" verbose="1">
+    <test name="Get API All" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.GetBookingTest">
+                <methods>
+                    <include name="getBookingAll"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get API by ID" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.GetBookingTest">
+                <methods>
+                    <parameter name="id" value="1">
+                        <include name="getBookingByID"/>
+                    </parameter>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetAPI DataPRovider" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.GetBookingTest">
+                <methods>
+                    <include name="getBookingByDataProviderID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetAPI DataPRovider CSV" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.GetBookingTest">
+                <methods>
+                    <include name="getBookingIdCsvDataProvider"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Post Booking test" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.CreateBookingTest">
+                <methods>
+                    <include name="createBookings"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Post Booking test with csv" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.CreateBookingTest">
+                <methods>
+                    <include name="createBookingsDataProvider"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create booking BDD" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.CreateBookingTest">
+                <methods>
+                    <include name="simpleXMLTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Booking Test" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.UpdateBookingTest">
+                <methods>
+                    <parameter name="id" value="1">
+                        <include name="updateBookings"/>
+                    </parameter>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Patch Update Booking Test" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.PatchUpdateTest">
+                <methods>
+                    <include name="patchUpdateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Booking Test" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.DeleteBookingTest">
+                <methods>
+                    <include name="deleteBookingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Filter by name Booking Test" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.FilterBookingTest">
+                <methods>
+                    <parameter name="fName" value="Mary">
+                        <include name="filterByFirstName"/>
+                    </parameter>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Test the new GetAllAPI" enabled="false">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.GetBookingTest">
+                <methods>
+                    <parameter name="Id" value="1">
+                        <include name="getAllBookingsV1"/>
+                    </parameter>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Single Booking" enabled="true">
+        <classes>
+            <class name="com.herokuapp.restfulbooker.CreateBookingTest">
+                <methods>
+                    <include name="createSingleBooking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
