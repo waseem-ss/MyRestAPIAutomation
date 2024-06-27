@@ -14,8 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.equalTo;
+import static io.restassured.RestAssured.given;
 
 public class CreateBookingTest extends APIBaseState {
 
